@@ -50,10 +50,10 @@ public class PracticeFormTests extends BaseTest {
             $("[for='hobbies-checkbox-2']").click();
             $("#uploadPicture").uploadFromClasspath(fileName);
             $("#currentAddress").setValue(address);
-            $("#state").click();
-            $(byText(state)).click();
+            $("#state").scrollTo().click();
+            $("#stateCity-wrapper").$(byText(state)).click();
             $("#city").click();
-            $(byText(city)).click();
+            $("#stateCity-wrapper").$(byText(city)).click();
         });
 
         step("Submit filled form", () ->
