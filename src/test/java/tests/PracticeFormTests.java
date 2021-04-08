@@ -1,8 +1,6 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
 import com.github.javafaker.Faker;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
@@ -11,11 +9,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class PracticeFormTests extends BaseTest {
-
-    @BeforeAll
-    static void setup() {
-        Configuration.startMaximized = true;
-    }
 
     @Test
     void fullFillForm() {
@@ -37,7 +30,6 @@ public class PracticeFormTests extends BaseTest {
         String state = "Rajasthan";
         String city = "Jaipur";
         String datePickerLocator = String.format("%s %sth, %s", monthOfBirth, dateOfBirth, yearOfBirth);
-
 
         step("Open main page.", () ->
             open("https://demoqa.com/automation-practice-form")
